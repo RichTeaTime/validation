@@ -10,8 +10,11 @@ export {ValidationViewStrategy} from './validation-view-strategy';
 export {TWBootstrapViewStrategy} from './strategies/twbootstrap-view-strategy';
 export {ensure} from './decorators';
 
+
+
 import {ValidationConfig} from './validation-config';
 import {Validation} from './validation';
+import {DefaultLoader} from 'aurelia-loader-default'
 
 export function configure(aurelia, configCallback) {
   aurelia.globalResources('./validate-custom-attribute');
@@ -19,5 +22,7 @@ export function configure(aurelia, configCallback) {
     configCallback(Validation.defaults);
   }
   aurelia.singleton(ValidationConfig, Validation.defaults);
-  return Validation.defaults.locale();
+
+  let loader = aurelia.container.get(DefaultLoader);
+  return Validation.defaults.locale(loader);
 }

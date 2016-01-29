@@ -73,8 +73,8 @@ export class ValidationConfig {
     }
     return this;
   }
-  locale() {
-    return ValidationLocale.Repository.load(this.getValue('locale'), this.getValue('localeResources'));
+  locale(loader) {
+    return ValidationLocale.Repository.load(this.getValue('locale'), this.getValue('localeResources'), loader);
   }
   useViewStrategy(viewStrategy) {
     return this.setValue('viewStrategy', viewStrategy);

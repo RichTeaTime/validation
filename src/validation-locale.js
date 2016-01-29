@@ -46,7 +46,7 @@ class ValidationLocaleRepository  {
       messages: {}
     };
   }
-  load(localeIdentifier, basePath) {
+  load(localeIdentifier, basePath, loader) {
     if (!basePath) {
       basePath = 'aurelia-validation/resources/';
     }
@@ -55,7 +55,7 @@ class ValidationLocaleRepository  {
         let locale = this.instances.get(localeIdentifier);
         resolve(locale);
       } else {
-        System.import(basePath + localeIdentifier).then((resource) => {
+        loader.loadModule(basePath + localeIdentifier).then((resource) => {
           let locale = this.addLocale(localeIdentifier, resource.data);
           resolve(locale);
         });
