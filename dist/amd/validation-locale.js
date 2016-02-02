@@ -65,7 +65,7 @@ define(['exports'], function (exports) {
       };
     }
 
-    ValidationLocaleRepository.prototype.load = function load(localeIdentifier, basePath) {
+    ValidationLocaleRepository.prototype.load = function load(localeIdentifier, basePath, loader) {
       var _this = this;
 
       if (!basePath) {
@@ -76,7 +76,7 @@ define(['exports'], function (exports) {
           var locale = _this.instances.get(localeIdentifier);
           resolve(locale);
         } else {
-          System['import'](basePath + localeIdentifier).then(function (resource) {
+          loader.loadModule(basePath + localeIdentifier).then(function(resource) {
             var locale = _this.addLocale(localeIdentifier, resource.data);
             resolve(locale);
           });

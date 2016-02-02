@@ -92,8 +92,8 @@ define(['exports', './validation-locale', './strategies/twbootstrap-view-strateg
       return this;
     };
 
-    ValidationConfig.prototype.locale = function locale() {
-      return _validationLocale.ValidationLocale.Repository.load(this.getValue('locale'), this.getValue('localeResources'));
+    ValidationConfig.prototype.locale = function locale(loader) {
+      return _validationLocale.ValidationLocale.Repository.load(this.getValue('locale'), this.getValue('localeResources'), loader);
     };
 
     ValidationConfig.prototype.useViewStrategy = function useViewStrategy(viewStrategy) {

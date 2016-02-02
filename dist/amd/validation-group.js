@@ -172,6 +172,11 @@ define(['exports', 'aurelia-metadata', './validation-group-builder', './validati
       return this;
     };
 
+    ValidationGroup.prototype.onResultPropertyChanged = function onResultPropertyChanged(callback) {
+      this.result.addPropertyValidationCallback(callback);
+      return this;
+    };
+
     ValidationGroup.prototype.ensure = function ensure(bindingPath, configCallback) {
       this.builder.ensure(bindingPath, configCallback);
       this.onPropertyValidationCallbacks.forEach(function (callback) {
