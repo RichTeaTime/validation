@@ -130,7 +130,6 @@ declare module 'aurelia-validation' {
     validate(forceDirty?: any, forceExecution?: any): any;
     onValidate(validationFunction: any, validationFunctionFailedCallback: any): any;
     onPropertyValidate(validationFunction: any): any;
-    onResultPropertyChanged(callback:any):any;
     
     /**
        * Adds a validation property for the specified path
@@ -138,7 +137,7 @@ declare module 'aurelia-validation' {
        * @param configCallback a configuration callback
        * @returns {ValidationGroup} returns this ValidationGroup, to enable fluent API
        */
-    ensure(bindingPath: any, configCallback?: any): ValidationGroup;
+    ensure(bindingPath: any, configCallback: any): any;
     
     /**
        * Adds a validation rule that checks a value for being 'isNotEmpty', 'required'
@@ -194,7 +193,7 @@ declare module 'aurelia-validation' {
        * @param otherValueLabel Optional: a label to use in the validation message
        * @returns {ValidationGroup} returns this ValidationGroup, to enable fluent API
        */
-    isEqualTo(otherValue: any, otherValueLabel?: any): any;
+    isEqualTo(otherValue: any, otherValueLabel: any): any;
     
     /**
        * Adds a validation rule that checks a value for not being equal to a threshold
@@ -202,7 +201,7 @@ declare module 'aurelia-validation' {
        * @param otherValueLabel Optional: a label to use in the validation message
        * @returns {ValidationGroup} returns this ValidationGroup, to enable fluent API
        */
-    isNotEqualTo(otherValue: any, otherValueLabel?: any): any;
+    isNotEqualTo(otherValue: any, otherValueLabel: any): any;
     
     /**
        * Adds a validation rule that checks a value for being a valid isEmail address
@@ -285,7 +284,7 @@ declare module 'aurelia-validation' {
        * @param minimumComplexityLevel {Number} Optionally, specifiy the number of groups to match. Default is 4.
        * @returns {ValidationGroup} returns this ValidationGroup, to enable fluent API
        */
-    isStrongPassword(minimumComplexityLevel?: any): any;
+    isStrongPassword(minimumComplexityLevel: any): any;
     
     /**
        * Adds a validation rule that checks a value for matching a particular regex
@@ -300,7 +299,7 @@ declare module 'aurelia-validation' {
        * @param threshold {Object} An optional threshold that will be passed to the customFunction
        * @returns {ValidationGroup} returns this ValidationGroup, to enable fluent API
        */
-    passes(customFunction: any, threshold?: any): any;
+    passes(customFunction: any, threshold: any): any;
     
     /**
        * Adds the {ValidationRule}
@@ -315,7 +314,7 @@ declare module 'aurelia-validation' {
        * @param threshold {Object} an optional treshold object that is passed to the conditionExpression
        * @returns {ValidationGroup} returns this ValidationGroup, to enable fluent API
        */
-    if(conditionExpression: any, threshold?: any): any;
+    if(conditionExpression: any, threshold: any): any;
     
     /**
        * Specifies that the next validation rules only need to be evaluated when the previously specified conditionExpression is false.
@@ -563,7 +562,7 @@ declare module 'aurelia-validation' {
        * @param subject The subject to validate
        * @returns {ValidationGroup} A ValidationGroup that encapsulates the validation rules and current validation state for this subject
        */
-    on(subject: any, configCallback?: any): any;
+    on(subject: any, configCallback: any): any;
     onBreezeEntity(breezeEntity: any, configCallback: any): any;
   }
   export class TWBootstrapViewStrategyBase extends ValidationViewStrategy {
