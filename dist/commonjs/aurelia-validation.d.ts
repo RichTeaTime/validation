@@ -138,7 +138,7 @@ declare module 'aurelia-validation' {
        * @param configCallback a configuration callback
        * @returns {ValidationGroup} returns this ValidationGroup, to enable fluent API
        */
-    ensure(bindingPath: any, configCallback?: any): any;
+    ensure(bindingPath: any, configCallback?: any): ValidationGroup;
     
     /**
        * Adds a validation rule that checks a value for being 'isNotEmpty', 'required'
@@ -563,7 +563,7 @@ declare module 'aurelia-validation' {
        * @param subject The subject to validate
        * @returns {ValidationGroup} A ValidationGroup that encapsulates the validation rules and current validation state for this subject
        */
-    on(subject: any, configCallback: any): any;
+    on(subject: any, configCallback?: any): any;
     onBreezeEntity(breezeEntity: any, configCallback: any): any;
   }
   export class TWBootstrapViewStrategyBase extends ValidationViewStrategy {
